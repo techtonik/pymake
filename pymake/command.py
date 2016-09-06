@@ -177,9 +177,9 @@ def main(args, env, cwd, cb):
                       action='append',
                       dest='makefiles',
                       default=[])
-        op.add_option('-d',
+        op.add_option('-d', '--debug',
                       action="store_true",
-                      dest="verbose", default=False)
+                      dest="debug", default=False)
         op.add_option('-k', '--keep-going',
                       action="store_true",
                       dest="keepgoing", default=False)
@@ -230,7 +230,7 @@ def main(args, env, cwd, cb):
             shortflags.append('n')
 
         loglevel = logging.WARNING
-        if options.verbose:
+        if options.debug:
             loglevel = logging.DEBUG
             shortflags.append('d')
 
